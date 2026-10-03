@@ -62,7 +62,7 @@ impl PlatformDownloader for MedcofDownloader {
         &self,
         _info: &MediaInfo,
         _opts: &DownloadOptions,
-        _progress: mpsc::Sender<f64>,
+        _progress: tokio::sync::mpsc::Sender<omniget_core::models::progress::ProgressUpdate>,
     ) -> anyhow::Result<DownloadResult> {
         Err(anyhow!("Use the courses interface to download from Medcof"))
     }

@@ -219,6 +219,7 @@ async fn download_with_ytdlp(
         8,
         false,
         &extra_args,
+        None,
     )
     .await?;
 

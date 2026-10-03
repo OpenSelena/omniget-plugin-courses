@@ -221,6 +221,7 @@ async fn download_with_ytdlp(
         8,
         false,
         &[],
+        None,
     )
     .await?;
 

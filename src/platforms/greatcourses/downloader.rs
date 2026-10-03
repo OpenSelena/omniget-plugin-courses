@@ -253,6 +253,7 @@ async fn download_with_ytdlp(
         8,
         false,
         &["--force-generic-extractor".to_string()],
+        None,
     )
     .await?;
 

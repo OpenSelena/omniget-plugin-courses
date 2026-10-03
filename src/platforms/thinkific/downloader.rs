@@ -282,6 +282,7 @@ async fn download_with_ytdlp(
         8,
         false,
         &["--add-headers".to_string(), cookie_header],
+        None,
     )
     .await?;
 

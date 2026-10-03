@@ -321,7 +321,8 @@ impl HotmartDownloader {
                                         concurrent_fragments,
                                         false,
                                         &[],
-                                    ).await {
+        None,
+    ).await {
                                         Ok(result) => {
                                             let _ = bytes_tx.send(result.file_size_bytes);
                                             paths.push(result.file_path);
@@ -393,7 +394,8 @@ impl HotmartDownloader {
                                         concurrent_fragments,
                                         false,
                                         &[],
-                                    ).await {
+        None,
+    ).await {
                                         Ok(result) => {
                                             let _ = bytes_tx.send(result.file_size_bytes);
                                             paths.push(result.file_path);
@@ -825,7 +827,7 @@ impl PlatformDownloader for HotmartDownloader {
         &self,
         _info: &MediaInfo,
         _opts: &DownloadOptions,
-        _progress: mpsc::Sender<f64>,
+        _progress: tokio::sync::mpsc::Sender<omniget_core::models::progress::ProgressUpdate>,
     ) -> anyhow::Result<DownloadResult> {
         Err(anyhow!("Hotmart downloads use start_course_download, not the generic download trait"))
     }
