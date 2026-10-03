@@ -39,4 +39,4 @@ omniget-plugin-sdk = { git = "https://github.com/OpenSelena/omniget" }
 
 [target.'cfg(windows)'.dependencies]
 webview2-com = "0.38"
-windows-core = "0.61"
+windows-core = "0.62"
