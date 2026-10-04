@@ -88,7 +88,8 @@ impl OmnigetPlugin for CoursesPlugin {
                 }
                 "hotmart_get_modules" => {
                     let course_id: u64 = serde_json::from_value(args.get("course_id").or(args.get("courseId")).cloned().ok_or_else(|| "missing 'course_id'".to_string())?).map_err(|e| e.to_string())?;
-                    let res = commands::courses::hotmart_get_modules(wrap_state(&state), course_id).await?;
+                    let slug: String = serde_json::from_value(args.get("slug").cloned().unwrap_or_else(|| serde_json::Value::String(String::new()))).unwrap_or_default();
+                    let res = commands::courses::hotmart_get_modules(wrap_state(&state), course_id, slug).await?;
                     serde_json::to_value(res).map_err(|e| e.to_string())
                 }
                 "cancel_course_download" => {
