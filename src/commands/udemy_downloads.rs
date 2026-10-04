@@ -233,7 +233,7 @@ pub async fn start_udemy_course_download(
         return Err("drm_protected".to_string());
     }
 
-    let settings = settings_helper::load_settings(&app);
+    let settings = settings_helper::load_settings();
 
     tokio::spawn(async move {
         let downloader = UdemyDownloader::new(

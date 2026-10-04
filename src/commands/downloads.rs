@@ -40,7 +40,7 @@ pub async fn start_course_download(
         map.insert(course_id, cancel_token.clone());
     }
 
-    let settings = settings_helper::load_settings(&app);
+    let settings = settings_helper::load_settings();
 
     tokio::spawn(async move {
         let downloader = HotmartDownloader::new(

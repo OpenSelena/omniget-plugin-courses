@@ -1,6 +1,6 @@
 [package]
 name = "omniget-plugin-courses"
-version = "1.4.0"
+version = "1.4.1"
 edition = "2021"
 
 [lib]
@@ -33,7 +33,6 @@ urlencoding = "2"
 base64 = "0.22.1"
 sha2 = "0.10"
 filetime = "0.2.27"
-tauri-plugin-store = "2"
 omniget-core = { git = "https://github.com/OpenSelena/omniget", features = ["desktop"] }
 omniget-plugin-sdk = { git = "https://github.com/OpenSelena/omniget" }
 
