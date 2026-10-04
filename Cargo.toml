@@ -38,5 +38,5 @@ omniget-core = { git = "https://github.com/OpenSelena/omniget", features = ["des
 omniget-plugin-sdk = { git = "https://github.com/OpenSelena/omniget" }
 
 [target.'cfg(windows)'.dependencies]
-webview2-com = "0.38"
+webview2-com = "0.39"
 windows-core = "0.62"
